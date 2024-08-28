@@ -1,9 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import Link from "next/link"
 import AppLayout from "@/components/AppLayout";
+import { colors } from "@/styles/theme";
+import Button from "@/components/Button";
+import GitHub from "@/components/Icons/GitHub";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +17,37 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AppLayout>
-        <h1>Devter</h1>
+        <section>
+          <img src="/logo-twitter.jpeg" alt="Twitter Logo" />
+          <h1>Devter</h1>
+          <h3>Talk about development with developers</h3>
+          <Button>
+            <GitHub width={24} height={24} fill={'#fff'}></GitHub>
+            Login with github
+            </Button>
+        </section>
       </AppLayout>
+      <style jsx>{`
+        h1 {
+          color: ${colors.primary};
+          margin-block: 15px;
+        }
+        h3 {
+          color: ${colors.secondary};
+          width: 70%;
+          margin-bottom: 15px;
+        }
+        section {
+          display: grid;
+          height: 100vh;
+          place-items: center;
+          place-content: center;
+        }
+        img {
+          width: 25%;
+        }
+
+      `}</style>
     </>
   );
 }
